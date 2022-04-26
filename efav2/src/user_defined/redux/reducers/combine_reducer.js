@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import events from './event_reducers'
+import payload from './event_reducer';
 
 export default combineReducers({
-    events
+    payload : payload
 });

@@ -4,13 +4,11 @@ import axios from 'axios'
 const url = process.env.REACT_APP_API_URL;
 
 class EventServices{
-    create(events) {
-        console.log(url)
-        console.log(events.events)
-        return axios.post(url, events.events)
+    create(data) {
+        return axios.post(url, data.events)
     }
     getAll() {
-        return axios.get('url')
+        return axios.get(url)
     }
     get(id) {
         return axios.get(`url/${id}`)
