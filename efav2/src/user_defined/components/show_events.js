@@ -1,6 +1,9 @@
 import React from 'react';
 import { connect } from "react-redux";
 import { retrieveEvents } from '../redux/actions/event_actions';
+import { store } from '../redux/store';
+
+store.dispatch(retrieveEvents())
 
 function ShowEvents({data}) {
     let response
@@ -17,6 +20,7 @@ function ShowEvents({data}) {
                         <p>Venue: {x.evenue}</p>
                         <p>Date: {x.edate}</p>
                         <p>Description: {x.edescription}</p>
+                        <hr/>
                     </div>
                 )
             }

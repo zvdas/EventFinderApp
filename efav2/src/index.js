@@ -5,9 +5,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { store } from './user_defined/redux/store';
-import { retrieveEvents } from './user_defined/redux/actions/event_actions';
-
-store.dispatch(retrieveEvents())
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

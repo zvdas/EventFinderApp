@@ -11,19 +11,19 @@ class EventServices{
         return axios.get(url)
     }
     get(id) {
-        return axios.get(`url/${id}`)
+        return axios.get(`${url}/${id}`)
     }
     update(id, data) {
-        return axios.put(`url/${id}`, data)
+        return axios.put(`${url}/${id}`, data)
     }
     delete(id) {
-        return axios.delete(`url/${id}`)
+        return axios.delete(`${url}/${id}`)
     }
     findByDate(date) {
-        return axios.get(`/url?date=${date}`)
+        return axios.get(`${url}/?edate=${date}`)
     }
     findByVenue(venue) {
-        return axios.get(`/url?venue=${venue}`)
+        return axios.get(`${url}/?evenue=${venue}`)
     }
 }
 

@@ -1,4 +1,4 @@
-import { CREATE_EVENT, DELETE_EVENT, RETRIEVE_EVENTS, UPDATE_EVENT } from "./event_types"
+import { CREATE_EVENT, DELETE_EVENT, RETRIEVE_EVENTS, SELECT_DATATYPE, UPDATE_EVENT } from "./event_types"
 
 export const createAnEvent = (data) => {
     return {
@@ -35,16 +35,23 @@ export const deleteEventById = (id) => {
     }
 }
 
-export const getEventByDate = (date) => {
+export const getEventByDate = (data) => {
     return {
         type : RETRIEVE_EVENTS,
-        payload : date
+        payload : data
     }
 }
 
-export const getEventByVenue = (venue) => {
+export const getEventByVenue = (data) => {
     return {
         type : RETRIEVE_EVENTS,
-        payload : venue
+        payload : data
+    }
+}
+
+export const getSelectedDataType = (data) => {
+    return {
+        type : SELECT_DATATYPE,
+        payload : data
     }
 }

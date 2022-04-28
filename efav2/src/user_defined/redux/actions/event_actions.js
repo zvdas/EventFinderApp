@@ -1,5 +1,5 @@
 import EventServices from "../../services/event-services"
-import { createAnEvent, deleteEventById, getAllEvents, getEventByDate, getEventById, getEventByVenue, updateEventById } from "./event_methods";
+import { createAnEvent, deleteEventById, getAllEvents, getEventByDate, getEventById, getEventByVenue, getSelectedDataType, updateEventById } from "./event_methods";
 
 export const createEvent = (events) => {
     return (dispatch) =>{
@@ -68,5 +68,11 @@ export const findEventByVenue = (venue) => {
             dispatch(getEventByVenue(response.data))
         })
         .catch(err => {throw(err)})
+    }
+}
+
+export const selectDataTypes = (info) =>{
+    return (dispatch) => {
+        dispatch(getSelectedDataType(info))
     }
 }
