@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from "react-redux";
 import { retrieveEvents } from '../redux/actions/event_actions';
 import { store } from '../redux/store';
+import { mapStateToProps } from '../redux/actions/event_types'
 
 store.dispatch(retrieveEvents())
 
@@ -10,6 +11,7 @@ function ShowEvents({data}) {
     !data ?
     response = <p><strong>No Data Found</strong></p> :
     response = 
+    // /*
     (
         <div>
             {
@@ -26,20 +28,14 @@ function ShowEvents({data}) {
             }
         </div>
     )
+    // */
 
     return (
         <div>
             <h1>List of Events</h1>
             {response}
-            <hr/>
         </div>
     )
-}
-
-let mapStateToProps = (state) => {
-    return {
-        data : state.payload
-    }
 }
 
 export default connect(mapStateToProps, {retrieveEvents})(ShowEvents)

@@ -17,6 +17,7 @@ class EventServices{
         return axios.put(`${url}/${id}`, data)
     }
     delete(id) {
+        console.log(`inside event services : id : ${id}`)
         return axios.delete(`${url}/${id}`)
     }
     findByDate(date) {

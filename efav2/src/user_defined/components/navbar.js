@@ -3,6 +3,7 @@ import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
 import AddEvent from './add_event'
 import SearchEvent from './search_event'
 import ShowEvents from './show_events'
+import UpdateEvent from './update_event'
 
 export default function Navbar() {
     return (
@@ -15,6 +16,7 @@ export default function Navbar() {
                 <Route exact path="/show" element={<ShowEvents/>}/>
                 <Route exact path="/search" element={<SearchEvent/>}/>
                 <Route exact path="/add" element={<AddEvent/>}/>
+                <Route path="/update/:id" element={<UpdateEvent/>}/>
             </Routes>
         </BrowserRouter>
     )

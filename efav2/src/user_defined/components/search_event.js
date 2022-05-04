@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { findEventByID, findEventByDate, findEventByVenue, selectDataTypes } from '../redux/actions/event_actions'
+import { Link } from 'react-router-dom'
+import { findEventByID, findEventByDate, findEventByVenue, selectDataTypes, deleteEvent } from '../redux/actions/event_actions'
+import { mapStateToProps } from '../redux/actions/event_types'
 import { store } from '../redux/store'
 
 class SearchEvent extends Component {
@@ -16,7 +18,9 @@ class SearchEvent extends Component {
     
       this.handleDropdownOptions = this.handleDropdownOptions.bind(this);
       this.startSearch = this.startSearch.bind(this);
-      this.showResults = this.showResults.bind(this)
+      this.showResults = this.showResults.bind(this);
+      this.getIdData = this.getIdData.bind(this);
+      this.deleteData = this.deleteData.bind(this);
     }
 
     handleDropdownOptions(event){
@@ -39,6 +43,15 @@ class SearchEvent extends Component {
         }
     }
 
+    getIdData(e){
+        this.props.findEventByID(e)
+    }
+
+    deleteData(e){
+        console.log(`in search event : delete data id : ${e}`)
+        this.props.deleteEvent(e)
+    }
+
     showResults(){
         let data = store.getState().payload
         let response
@@ -53,10 +66,12 @@ class SearchEvent extends Component {
                     <p>Venue: {data.evenue}</p>
                     <p>Date: {data.edate}</p>
                     <p>Description: {data.edescription}</p>
+                    <button onClick={()=>this.getIdData(data.id)}><Link to={`/update/${data.id}`}>Update</Link></button>
+                    <button onClick={()=>this.deleteData(data.id)}>Delete</button>
                     <hr/>
                 </div>
             )
-        }else if(Array.isArray(this.props.data)===true){
+        }else if(Array.isArray(data)===true){
             response = 
             (
                 <div>
@@ -68,6 +83,8 @@ class SearchEvent extends Component {
                                 <p>Venue: {x.evenue}</p>
                                 <p>Date: {x.edate}</p>
                                 <p>Description: {x.edescription}</p>
+                                <button onClick={()=>this.getIdData(x.id)}><Link to={`/update/${x.id}`}>Update</Link></button>
+                                <button onClick={()=>this.deleteData(x.id)}>Delete</button>
                                 <hr/>
                             </div>
                         )
@@ -98,7 +115,7 @@ class SearchEvent extends Component {
                 
                 <button onClick={this.startSearch}>Search</button>
                 <button onClick={this.showResults}>Show Results</button>
-                
+
                 <hr/>
                 
                 {this.state.response}
@@ -107,10 +124,4 @@ class SearchEvent extends Component {
     }
 }
 
-let mapStateToProps = (state) => {
-    return {
-        data : state.payload
-    }
-}
-
-export default connect(mapStateToProps, { findEventByID, findEventByDate, findEventByVenue, selectDataTypes })(SearchEvent)
+export default connect(mapStateToProps, { findEventByID, findEventByDate, findEventByVenue, selectDataTypes, deleteEvent })(SearchEvent)

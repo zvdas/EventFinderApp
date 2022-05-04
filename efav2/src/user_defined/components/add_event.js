@@ -11,9 +11,7 @@ class AddEvent extends Component {
         this.edate = React.createRef();
         this.edescription = React.createRef();
 
-        this.state = {
-        //    events : []
-        }
+        this.state = {}
 
         this.saveEvent = this.saveEvent.bind(this);
     }
@@ -40,12 +38,6 @@ class AddEvent extends Component {
                 <button onClick={this.saveEvent}>Submit</button>
             </div>
         )
-    }
-}
-
-let mapStateToProps = (state) => {
-    return {
-        data : state.payload
     }
 }
 

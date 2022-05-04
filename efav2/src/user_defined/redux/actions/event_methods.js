@@ -21,7 +21,7 @@ export const getEventById = (data) => {
     }
 }
 
-export const updateEventById = (id, data) => {
+export const updateEventById = (data) => {
     return {
         type : UPDATE_EVENT,
         payload : data
@@ -29,6 +29,7 @@ export const updateEventById = (id, data) => {
 }
 
 export const deleteEventById = (id) => {
+    console.log(`inside event methods : id ${id}`)
     return {
         type : DELETE_EVENT,
         payload : id

@@ -5,12 +5,16 @@ export default function EventReducer(state=[], action){
         case CREATE_EVENT:
             return [...state, action.payload]
         case RETRIEVE_EVENTS:
-            console.log("in event reducer retreive events:",action.payload)
             return action.payload
         case UPDATE_EVENT:
-            return action
+            if(state.id === action.payload.id){
+                return {...state, ...action.payload}
+            }else{
+                return state
+            }
         case DELETE_EVENT:
-            return action
+            console.log("in event reducer delete events:",action.payload)
+            return action.payload
         case SELECT_DATATYPE:
             return action.payload
         default:
