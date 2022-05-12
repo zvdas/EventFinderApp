@@ -16,13 +16,15 @@ function ShowEvents({data}) {
         <div>
             {
                 data.map((x) => 
-                    <div key={x.id}>
-                        <p>ID: {x.id}</p>
-                        <p>Name: {x.ename}</p>
-                        <p>Venue: {x.evenue}</p>
-                        <p>Date: {x.edate}</p>
-                        <p>Description: {x.edescription}</p>
-                        <hr/>
+                    <div className="card center" key={x.id}>
+                        <div className="card-body bg-dark">
+                            <h5 className="card-title">{x.ename}</h5>
+                            <p className="card-text">
+                                Venue: {x.evenue} | Date: {x.edate}
+                                <br/>
+                                {x.edescription}
+                            </p>
+                        </div>
                     </div>
                 )
             }
@@ -32,7 +34,7 @@ function ShowEvents({data}) {
 
     return (
         <div>
-            <h1>List of Events</h1>
+            <h3>List of Events</h3>
             {response}
         </div>
     )

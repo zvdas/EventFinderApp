@@ -1,8 +1,15 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
+import PageDefault from './event_module/components/page_default';
 
 function App() {
   return (
+    <div className='container'>
+      <PageDefault/>
+    </div>
+    /*  
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -19,6 +26,7 @@ function App() {
         </a>
       </header>
     </div>
+    */
   );
 }
 

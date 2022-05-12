@@ -35,7 +35,7 @@ class UpdateEvent extends Component {
         let data = store.getState().payload
         return (
             <div>
-                <h1>Update an Event</h1>
+                <h3>Update an Event</h3>
                 Name: <input value={data.ename} readOnly={true}/>
                 <input type="text" ref={this.ename}/>
                 <br/>

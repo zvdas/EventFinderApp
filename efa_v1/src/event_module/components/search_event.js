@@ -102,7 +102,7 @@ class SearchEvent extends Component {
 
         return (
             <div>
-                <h1>Search Events</h1>
+                <h3>Search Events</h3>
                 
                 <select onChange={this.handleDropdownOptions} value={this.datatype} ref={this.datatype}>  
                     <option value="">---select---</option>

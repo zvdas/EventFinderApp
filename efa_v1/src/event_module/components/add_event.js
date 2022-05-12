@@ -30,7 +30,7 @@ class AddEvent extends Component {
     render() {
         return (
             <div>
-                <h1>Create an Event</h1>
+                <h3>Create an Event</h3>
                 Name: <input type="text" ref={this.ename}/><br/>
                 Venue: <input type="text" ref={this.evenue}/><br/>
                 Date: <input type="date" ref={this.edate}/><br/>
