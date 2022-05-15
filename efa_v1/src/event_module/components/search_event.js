@@ -12,9 +12,7 @@ class SearchEvent extends Component {
       this.eoptions = React.createRef();
       this.datatype = React.createRef();
 
-      this.state = {
-          response:''
-      }
+      this.state = {}
     
       this.handleDropdownOptions = this.handleDropdownOptions.bind(this);
       this.startSearch = this.startSearch.bind(this);

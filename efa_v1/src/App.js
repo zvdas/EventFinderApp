@@ -7,6 +7,9 @@ import PageDefault from './event_module/components/page_default';
 function App() {
   return (
     <div className='container'>
+      <div className='logoarea d-flex justify-content-center'>
+        <h1>Wazzup Event Horizon</h1>
+      </div>
       <PageDefault/>
     </div>
     /*  

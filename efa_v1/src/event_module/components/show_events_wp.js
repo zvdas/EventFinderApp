@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import { connect } from "react-redux";
 import { retrieveEvents } from '../redux/actions/event_actions';
-import { store } from '../redux/store';
 import { mapStateToProps } from '../redux/actions/event_types'
 
-store.dispatch(retrieveEvents())
-
 function ShowEventsWP({data}) {
-    const [currentIndex, setCurrentIndex] = useState(0)
 
+    const [currentIndex, setCurrentIndex] = useState(0)
+   
     const previousPage = (currentIndex) => {
         if(currentIndex>0){
             return setCurrentIndex(currentIndex - 5)
@@ -25,7 +23,6 @@ function ShowEventsWP({data}) {
     !data ?
     response = <p><strong>No Data Found</strong></p> :
     response = 
-    // /*
     (
         <div>
             {
@@ -44,37 +41,31 @@ function ShowEventsWP({data}) {
             }
         </div>
     )
-    // */
 
-    /*
-    let pagination
-    pagination = 
+    let pagination = 
     (
     <div>
-    {
-    for(let i=1; i<Math.ceil(data.length/5)+1; i++){
-        return (<li className="page-item"><button className="page-link">{i}</button></li>)
-    }
-    }
+        <nav>
+            <ul className="pagination">
+                <li className="page-item">
+                    <button className="page-link" onClick={()=>previousPage(currentIndex)}>Previous</button>
+                </li>
+                <li className="page-item">
+                    <p className="page-link">Page {Math.ceil(currentIndex/5)+1} of {Math.ceil(data.length/5)}</p>
+                </li>
+                <li className="page-item">
+                    <button className="page-link" onClick={()=>nextPage(currentIndex)}>Next</button>
+                </li>
+            </ul>
+        </nav>
     </div>
     )
-    */
 
     return (
         <div>
             <h3>List of Events</h3>
             {response}
-            <nav>
-                <ul className="pagination">
-                    <li className="page-item">
-                        <button className="page-link" onClick={()=>previousPage(currentIndex)}>Previous</button>
-                    </li>
-                    {/* {pagination} */}
-                    <li className="page-item">
-                        <button className="page-link" onClick={()=>nextPage(currentIndex)}>Next</button>
-                    </li>
-                </ul>
-            </nav>
+            {pagination}
         </div>
     )
 }
