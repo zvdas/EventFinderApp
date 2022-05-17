@@ -48,7 +48,7 @@ class UpdateEvent extends Component {
                 Description: <textarea value={data.edescription} readOnly={true}/>
                 <textarea ref={this.edescription}/>
                 <br/>
-                <button onClick={this.updateEvent}>Submit</button>
+                <button className="btn btn-success" onClick={this.updateEvent}>Submit</button>
             </div>
         )
 

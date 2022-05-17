@@ -26,6 +26,7 @@ export default function Navbar() {
                     </button>
                 </div>
             </nav>
+            
             <Routes>
                 {/* <Route exact path="/show" element={<ShowEvents/>}/> */}
                 <Route exact path="/show" element={<ShowEventsWP/>}/>

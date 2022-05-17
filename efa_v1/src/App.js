@@ -10,9 +10,7 @@ function App() {
       <div className='logoarea d-flex justify-content-center'>
         <h1>Wazzup Event Horizon</h1>
       </div>
-<div class="row justify-content-center">
       <PageDefault/>
-</div>
     </div>
     /*  
     <div className="App">

@@ -35,7 +35,7 @@ class AddEvent extends Component {
                 Venue: <input type="text" ref={this.evenue}/><br/>
                 Date: <input type="date" ref={this.edate}/><br/>
                 Description: <textarea ref={this.edescription}/><br/>
-                <button onClick={this.saveEvent}>Submit</button>
+                <button className="btn btn-success" onClick={this.saveEvent}>Submit</button>
             </div>
         )
     }

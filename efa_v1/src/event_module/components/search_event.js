@@ -58,15 +58,17 @@ class SearchEvent extends Component {
         }else if(Array.isArray(data)===false){
             response = 
             (
-                <div>
-                    <p>ID: {data.id}</p>
-                    <p>Name: {data.ename}</p>
-                    <p>Venue: {data.evenue}</p>
-                    <p>Date: {data.edate}</p>
-                    <p>Description: {data.edescription}</p>
-                    <button onClick={()=>this.getIdData(data.id)}><Link to={`/update/${data.id}`}>Update</Link></button>
-                    <button onClick={()=>this.deleteData(data.id)}>Delete</button>
-                    <hr/>
+                <div className="card center">
+                    <div className="card-body bg-dark">
+                        <h5 className="card-title">{data.ename}</h5>
+                        <p className="card-text">
+                            Venue: {data.evenue} | Date: {data.edate}
+                            <br/>
+                            {data.edescription}
+                        </p>
+                        <button className="btn btn-success mx-1" onClick={()=>this.getIdData(data.id)}><Link className="text-decoration-none text-white" to={`/update/${data.id}`}>Update</Link></button>
+                        <button className="btn btn-danger mx-1" onClick={()=>this.deleteData(data.id)}>Delete</button>
+                    </div>
                 </div>
             )
         }else if(Array.isArray(data)===true){
@@ -75,15 +77,17 @@ class SearchEvent extends Component {
                 <div>
                     {
                         data.map((x) => 
-                            <div key={x.id}>
-                                <p>ID: {x.id}</p>
-                                <p>Name: {x.ename}</p>
-                                <p>Venue: {x.evenue}</p>
-                                <p>Date: {x.edate}</p>
-                                <p>Description: {x.edescription}</p>
-                                <button onClick={()=>this.getIdData(x.id)}><Link to={`/update/${x.id}`}>Update</Link></button>
-                                <button onClick={()=>this.deleteData(x.id)}>Delete</button>
-                                <hr/>
+                            <div className="card center" key={x.id}>
+                                <div className="card-body bg-dark">
+                                    <h5 className="card-title">{x.ename}</h5>
+                                    <p className="card-text">
+                                        Venue: {x.evenue} | Date: {x.edate}
+                                        <br/>
+                                        {x.edescription}
+                                    </p>
+                                    <button className="btn btn-success mx-1" onClick={()=>this.getIdData(x.id)}><Link className="text-decoration-none text-white" to={`/update/${x.id}`}>Update</Link></button>
+                                    <button className="btn btn-danger mx-1" onClick={()=>this.deleteData(x.id)}>Delete</button>
+                                </div>
                             </div>
                         )
                     }
@@ -100,22 +104,31 @@ class SearchEvent extends Component {
 
         return (
             <div>
-                <h3>Search Events</h3>
-                
-                <select onChange={this.handleDropdownOptions} value={this.datatype} ref={this.datatype}>  
-                    <option value="">---select---</option>
-                    <option value="id">Search By ID</option>
-                    <option value="date">Search By Date</option>
-                    <option value="venue">Search By Venue</option>
-                </select>
+                <div className="row">
+                    <div className="col"></div>
+                        <h3 className="col">Search Events</h3>
+                    <div className="col"></div>
+                </div>
 
-                <input type={type} placeholder={`Enter ${type} to search`} ref={this.eoptions}/>
-                
-                <button onClick={this.startSearch}>Search</button>
-                <button onClick={this.showResults}>Show Results</button>
+                <div className="row">
+                    <div className="col"></div>
+                    <div className="col-10 justify-content-center" style={{height:"40px"}}>
+                        <select className="h-100 d-inline-block mx-1" onChange={this.handleDropdownOptions} value={this.datatype} ref={this.datatype} style={{height:"40px"}}>  
+                            <option value="">---select---</option>
+                            <option value="id">Search By ID</option>
+                            <option value="date">Search By Date</option>
+                            <option value="venue">Search By Venue</option>
+                        </select>
+                    
+                        <input className="h-100 d-inline-block mx-1" type={type} placeholder={`Enter ${type} to search`} ref={this.eoptions} style={{height:"40px"}}/>
+
+                        <button className="btn btn-primary h-100 d-inline-block mx-1" onClick={this.startSearch}>Search</button>
+                        <button className="btn btn-info h-100 d-inline-block mx-1" onClick={this.showResults}>Show Results</button>
+                    </div>
+                    <div className="col"></div>
+                </div>        
 
                 <hr/>
-                
                 {this.state.response}
             </div>
         )
