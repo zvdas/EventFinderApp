@@ -44,7 +44,6 @@ function ShowEventsWP({data}) {
 
     let pagination = 
     (
-    <div>
         <nav>
             <ul className="pagination">
                 <li className="page-item">
@@ -58,14 +57,21 @@ function ShowEventsWP({data}) {
                 </li>
             </ul>
         </nav>
-    </div>
     )
 
     return (
         <div>
-            <h3>List of Events</h3>
+            <h3 className="text-center bg-secondary">List of Events</h3>
+            <hr/>
             {response}
-            {pagination}
+            <hr/>
+            <div className="row">
+                <div className="col"/>
+                <div className="col-5">
+                    {pagination}
+                </div>
+                <div className="col"/>
+            </div>
         </div>
     )
 }

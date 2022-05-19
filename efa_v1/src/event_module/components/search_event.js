@@ -104,12 +104,9 @@ class SearchEvent extends Component {
 
         return (
             <div>
-                <div className="row">
-                    <div className="col"></div>
-                        <h3 className="col">Search Events</h3>
-                    <div className="col"></div>
-                </div>
-
+                <h3 className="text-center bg-secondary">Search Events</h3>
+                <hr/>
+                
                 <div className="row">
                     <div className="col"></div>
                     <div className="col-10 justify-content-center" style={{height:"40px"}}>

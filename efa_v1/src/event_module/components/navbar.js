@@ -10,21 +10,25 @@ import UpdateEvent from './update_event'
 export default function Navbar() {
     return (
         <BrowserRouter>
-            <nav>
-                <div className="nav nav-tabs" role="tablist">
-                    <button className="nav-link"  data-bs-toggle="tab">
-                        <Link to={'/show'}>Show Events</Link>
-                    </button>
-                    <button className="nav-link"  data-bs-toggle="tab">
-                        <Link to={'/search'}>Search Event</Link>
-                    </button>
-                    <button className="nav-link"  data-bs-toggle="tab">
-                        <Link to={'/add'}>Create Event</Link>
-                    </button>
-                    <button className="nav-link"  data-bs-toggle="tab">
-                        <Link to={'/credits'}>Credits</Link>
-                    </button>
+            <nav className="row">
+                <div className="col"/>
+                <div className="col-8">
+                    <div className="nav nav-tabs" role="tablist">
+                        <button className="nav-link bg-dark"  data-bs-toggle="tab">
+                            <Link to={'/show'}>Show Events</Link>
+                        </button>
+                        <button className="nav-link bg-dark"  data-bs-toggle="tab">
+                            <Link to={'/search'}>Search Event</Link>
+                        </button>
+                        <button className="nav-link bg-dark"  data-bs-toggle="tab">
+                            <Link to={'/add'}>Create Event</Link>
+                        </button>
+                        <button className="nav-link bg-dark"  data-bs-toggle="tab">
+                            <Link to={'/credits'}>Credits</Link>
+                        </button>
+                    </div>
                 </div>
+                <div className="col"/>
             </nav>
             
             <Routes>
