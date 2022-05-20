@@ -40,7 +40,7 @@ class AddEvent extends Component {
                             {/* <br/> */}
                             <div className="row">
                                 <div className="col">
-                                    <label className="col-form-label">Name: </label>
+                                    <label className="col-form-label">Name</label>
                                 </div>
                                 <div className="col-9">
                                     <input type="text" className="form-control mb-2" ref={this.ename}/>
@@ -48,7 +48,7 @@ class AddEvent extends Component {
                             </div>
                             <div className="row">
                                 <div className="col">
-                                    <label className="col-form-label">Venue: </label>
+                                    <label className="col-form-label">Venue</label>
                                 </div>
                                 <div className="col-9">
                                     <input type="text" className="form-control mb-2" ref={this.evenue}/>
@@ -56,7 +56,7 @@ class AddEvent extends Component {
                             </div>
                             <div className="row">
                                 <div className="col">
-                                    <label className="col-form-label">Date: </label>
+                                    <label className="col-form-label">Date</label>
                                 </div>
                                 <div className="col-9">
                                     <input type="date" className="form-control mb-2" ref={this.edate}/>
@@ -64,7 +64,7 @@ class AddEvent extends Component {
                             </div>
                             <div className="row">
                                 <div className="col">
-                                    <label className="col-form-label">Description: </label>
+                                    <label className="col-form-label">Description</label>
                                 </div>
                                 <div className="col-9">
                                     <textarea className="form-control mb-2" ref={this.edescription}/>

@@ -105,25 +105,28 @@ class SearchEvent extends Component {
         return (
             <div>
                 <h3 className="text-center bg-secondary">Search Events</h3>
-                <hr/>
                 
-                <div className="row">
-                    <div className="col"></div>
-                    <div className="col-10 justify-content-center" style={{height:"40px"}}>
-                        <select className="h-100 d-inline-block mx-1" onChange={this.handleDropdownOptions} value={this.datatype} ref={this.datatype} style={{height:"40px"}}>  
-                            <option value="">---select---</option>
-                            <option value="id">Search By ID</option>
-                            <option value="date">Search By Date</option>
-                            <option value="venue">Search By Venue</option>
-                        </select>
-                    
-                        <input className="h-100 d-inline-block mx-1" type={type} placeholder={`Enter ${type} to search`} ref={this.eoptions} style={{height:"40px"}}/>
-
-                        <button className="btn btn-primary h-100 d-inline-block mx-1" onClick={this.startSearch}>Search</button>
-                        <button className="btn btn-info h-100 d-inline-block mx-1" onClick={this.showResults}>Show Results</button>
-                    </div>
-                    <div className="col"></div>
-                </div>        
+                <div className="container bg-dark py-2">
+                    <div className="row">
+                        <div className="col">
+                            <select className="h-100 d-inline-block mx-1 btn btn-primary" onChange={this.handleDropdownOptions} value={this.datatype} ref={this.datatype}>  
+                                <option value="">---select---</option>
+                                <option value="id">Search By ID</option>
+                                <option value="date">Search By Date</option>
+                                <option value="venue">Search By Venue</option>
+                            </select>
+                        </div>
+                        <div className="col-4">
+                            <input className="h-100 d-inline-block mx-1 form-control" type={type} placeholder={`Enter ${type} to search`} ref={this.eoptions} style={{height:"40px"}}/>
+                        </div>
+                        <div className="col-2">
+                            <button className="btn btn-primary h-100 d-inline-block mx-1" onClick={this.startSearch}>Search</button>
+                        </div>
+                        <div className="col">
+                            <button className="btn btn-info h-100 d-inline-block mx-1" onClick={this.showResults}>Show Results</button>
+                        </div>
+                    </div>        
+                </div>
 
                 <hr/>
                 {this.state.response}

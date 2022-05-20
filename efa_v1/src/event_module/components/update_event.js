@@ -35,20 +35,68 @@ class UpdateEvent extends Component {
         let data = store.getState().payload
         return (
             <div>
-                <h3>Update an Event</h3>
-                Name: <input value={data.ename} readOnly={true}/>
-                <input type="text" ref={this.ename}/>
-                <br/>
-                Venue: <input value={data.evenue} readOnly={true}/>
-                <input type="text" ref={this.evenue}/>
-                <br/>
-                Date: <input value={data.edate} readOnly={true}/>
-                <input type="date" ref={this.edate}/>
-                <br/>
-                Description: <textarea value={data.edescription} readOnly={true}/>
-                <textarea ref={this.edescription}/>
-                <br/>
-                <button className="btn btn-success" onClick={this.updateEvent}>Submit</button>
+                <h3 className="text-center bg-secondary">Update an Event</h3>
+                <hr/>
+                <div className="card center">
+                    <div className="card-body bg-dark">
+                        <div className="row">
+                            <div className="col"/>
+                            <div className="col-5">
+                                <label className="col-form-label">Current</label>
+                            </div>
+                            <div className="col-5">
+                                <label className="col-form-label">Updated</label>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col">
+                                <label className="col-form-label">Name</label>
+                            </div>
+                            <div className="col-5">
+                                <input className="form-control mb-2" value={data.ename} readOnly={true}/>
+                            </div>
+                            <div className="col-5">
+                                <input className="form-control mb-2" type="text" ref={this.ename} required placeholder="Enter name to update"/>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col">
+                                <label className="col-form-label">Venue</label>
+                            </div>
+                            <div className="col-5">
+                                <input className="form-control mb-2" value={data.evenue} readOnly={true}/>
+                            </div>
+                            <div className="col-5">
+                                <input className="form-control mb-2" type="text" ref={this.evenue} required placeholder="Enter venue to update"/>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col">
+                                <label className="col-form-label">Date</label>
+                            </div>
+                            <div className="col-5">
+                                <input className="form-control mb-2" value={data.edate} readOnly={true}/>
+                            </div>
+                            <div className="col-5">
+                                <input className="form-control mb-2" type="date" ref={this.edate} required/>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col">
+                                <label className="col-form-label">Description</label>
+                            </div>
+                            <div className="col-5">
+                                <textarea className="form-control mb-2" value={data.edescription} readOnly={true}/>
+                            </div>
+                            <div className="col-5">
+                                <textarea className="form-control mb-2" ref={this.edescription} required placeholder="Enter description to update"/>
+                            </div>
+                        </div>
+                        <div className="row justify-content-center">
+                            <button className="btn btn-success col-5" onClick={this.updateEvent}>Submit</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         )
 

@@ -8,7 +8,7 @@ function App() {
   return (
     <div className='container'>
       <div className='logoarea d-flex justify-content-center'>
-        <h1>Wazzup Event Horizon</h1>
+        <h1 className='bg-secondary bg-gradient'>Wazzup Event Horizon</h1>
       </div>
       <PageDefault/>
     </div>
