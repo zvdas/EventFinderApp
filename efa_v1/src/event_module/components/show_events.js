@@ -67,7 +67,6 @@ function ShowEvents({data}) {
             <hr/>
             {response}
             <hr/>
-            {data}
             <div className="row">
                 <div className="col"/>
                 <div className="col-5">
@@ -79,4 +78,4 @@ function ShowEvents({data}) {
     )
 }
 
-export default connect(mapStateToProps, {retrieveEvents})(ShowEvents)
+export default connect(mapStateToProps, { retrieveEvents })(ShowEvents)

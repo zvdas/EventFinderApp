@@ -1,14 +1,14 @@
 {
   "events": [
     {
-      "ename": "one",
+      "ename": "event one",
       "evenue": "venue one",
       "edate": "2022-04-25",
       "edescription": "description one",
       "id": 1
     },
     {
-      "ename": "two",
+      "ename": "event two",
       "evenue": "venue two",
       "edate": "2022-04-26",
       "edescription": "description two",

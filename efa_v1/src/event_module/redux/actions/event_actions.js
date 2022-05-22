@@ -15,6 +15,7 @@ export const retrieveEvents = () => {
     return (dispatch) => {
         return EventServices.getAll()
             .then(response => {
+                console.log("in event actions, get all", response.data)
                 dispatch(getAllEvents(response.data))
             })
             .catch(err => {throw(err)})
