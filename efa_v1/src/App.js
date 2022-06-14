@@ -10,6 +10,9 @@ function App() {
       <div className='logoarea d-flex justify-content-center'>
         <h1 className='bg-secondary bg-gradient'>Wazzup Event Horizon</h1>
       </div>
+      <p className='text-center text-white bg-dark my-1'>
+        Click <a className='text-white' href='https://zvdas.github.io'><u><strong>here</strong></u></a> to go to portfolio website
+      </p>
       <PageDefault/>
     </div>
     /*  
