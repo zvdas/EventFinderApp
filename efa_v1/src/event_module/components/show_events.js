@@ -9,14 +9,12 @@ function ShowEvents({data}) {
    
     const previousPage = (currentIndex) => {
         if(currentIndex>0){
-            console.log("previous", currentIndex)
             return setCurrentIndex(currentIndex - 5)
         }
     }
     
     const nextPage = (currentIndex) => {
         if(currentIndex<=data.length/5){
-            console.log("next", currentIndex)
             return setCurrentIndex(currentIndex + 5)
         }
     }

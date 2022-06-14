@@ -1,3 +1,5 @@
+/*
+// using Axios with JSON server APIs
 import axios from 'axios'
 
 // const url = 'http://localhost:4000/events';
@@ -17,7 +19,6 @@ class EventServices{
         return axios.put(`${url}/${id}`, data)
     }
     delete(id) {
-        console.log(`inside event services : id : ${id}`)
         return axios.delete(`${url}/${id}`)
     }
     findByDate(date) {
@@ -27,5 +28,38 @@ class EventServices{
         return axios.get(`${url}/?evenue=${venue}`)
     }
 }
+*/
+
+// /*
+// using firestore
+import db from "../../firebase-config";
+import { addDoc, collection, deleteDoc, doc, getDoc, getDocs, query, updateDoc, where } from "firebase/firestore";
+
+let ecoll = collection(db, "events");
+
+class EventServices{
+    create(data) {
+        return addDoc(ecoll, data.events);
+    }
+    getAll() {
+        return getDocs(ecoll).then(response=>({data: response.docs.map(doc=>({...doc.data(), id: doc.id}))}));
+    }   
+    get(id) {
+        return getDoc(doc(db, "events", id)).then(response=>({data:{...response.data(), id: response.id}}));
+    }
+    update(id, data) {
+        return updateDoc(doc(db, "events", id), data);
+    }
+    delete(id) {
+        return deleteDoc(doc(db, "events", id));
+    }
+    findByDate(date) {
+        return getDocs(query(collection(db, "events"), where("edate", "==", date))).then(response=>({data: response.docs.map(doc=>({...doc.data(), id: doc.id}))}));
+    }
+    findByVenue(venue) {
+        return getDocs(query(collection(db, "events"), where("evenue", "==", venue))).then(response=>({data: response.docs.map(doc=>({...doc.data(), id: doc.id}))}));
+    }
+}
+// */
 
 export default new EventServices();

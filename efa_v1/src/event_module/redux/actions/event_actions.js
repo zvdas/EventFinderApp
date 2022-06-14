@@ -15,13 +15,12 @@ export const retrieveEvents = () => {
     return (dispatch) => {
         return EventServices.getAll()
             .then(response => {
-                console.log("in event actions, get all", response.data)
                 dispatch(getAllEvents(response.data))
             })
             .catch(err => {throw(err)})
     }
 }
-
+ 
 export const findEventByID = (id) => {
     return (dispatch) => {
         return EventServices.get(id)
@@ -43,11 +42,9 @@ export const updateEvent = (id, data) => {
 }
 
 export const deleteEvent = (id) => {
-    console.log(`inside event actions : delete : id : ${id}`)
     return (dispatch) => {
         return EventServices.delete(id)
         .then(response => {
-            console.log(`inside event actions : response.data : ${response.data}`)
             dispatch(deleteEventById(response.data))
         })
         .catch(err => {throw(err)})

@@ -12,7 +12,7 @@ class SearchEvent extends Component {
       this.eoptions = React.createRef();
       this.datatype = React.createRef();
 
-      this.state = {}
+      this.state = {msg:''}
     
       this.handleDropdownOptions = this.handleDropdownOptions.bind(this);
       this.startSearch = this.startSearch.bind(this);
@@ -46,8 +46,8 @@ class SearchEvent extends Component {
     }
 
     deleteData(e){
-        console.log(`in search event : delete data id : ${e}`)
         this.props.deleteEvent(e)
+        this.setState({msg:"Event Deleted Successfully"})
     }
 
     showResults(){
@@ -130,6 +130,7 @@ class SearchEvent extends Component {
 
                 <hr/>
                 {this.state.response}
+                <p className="text-center">{this.state.msg}</p>
             </div>
         )
     }

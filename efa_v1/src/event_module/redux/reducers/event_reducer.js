@@ -13,7 +13,6 @@ export default function EventReducer(state=[], action){
                 return state
             }
         case DELETE_EVENT:
-            console.log("in event reducer delete events:",action.payload)
             return action.payload
         case SELECT_DATATYPE:
             return action.payload

@@ -1,4 +1,4 @@
-import { CREATE_EVENT, DELETE_EVENT, RETRIEVE_EVENTS, SELECT_DATATYPE, UPDATE_EVENT } from "./event_types"
+import { CONFIRMATION_MESSAGE, CREATE_EVENT, DELETE_EVENT, RETRIEVE_EVENTS, SELECT_DATATYPE, UPDATE_EVENT } from "./event_types"
 
 export const createAnEvent = (data) => {
     return {
@@ -29,7 +29,6 @@ export const updateEventById = (data) => {
 }
 
 export const deleteEventById = (id) => {
-    console.log(`inside event methods : id ${id}`)
     return {
         type : DELETE_EVENT,
         payload : id

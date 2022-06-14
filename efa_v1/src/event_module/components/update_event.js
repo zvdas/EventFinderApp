@@ -13,7 +13,7 @@ class UpdateEvent extends Component {
         this.edate = React.createRef();
         this.edescription = React.createRef();
 
-        this.state = {}
+        this.state = {msg:''}
 
         this.updateEvent = this.updateEvent.bind(this)
     }
@@ -29,6 +29,7 @@ class UpdateEvent extends Component {
         }
 
         this.props.updateEvent(id, event)
+        this.setState({msg:"Event Updated Successfully"})
     }
 
     render() {
@@ -94,6 +95,9 @@ class UpdateEvent extends Component {
                         </div>
                         <div className="row justify-content-center">
                             <button className="btn btn-success col-5" onClick={this.updateEvent}>Submit</button>
+                        </div>
+                        <div className="row">
+                            <p className="text-center">{this.state.msg}</p>
                         </div>
                     </div>
                 </div>

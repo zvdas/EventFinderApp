@@ -11,7 +11,7 @@ class AddEvent extends Component {
         this.edate = React.createRef();
         this.edescription = React.createRef();
 
-        this.state = {}
+        this.state = {msg:''}
 
         this.saveEvent = this.saveEvent.bind(this);
     }
@@ -25,6 +25,7 @@ class AddEvent extends Component {
         }
         
         this.props.createEvent(events)
+        this.setState({msg:"Event Created Successfully"})
     }
 
     render() {
@@ -33,52 +34,48 @@ class AddEvent extends Component {
                 <h3 className="text-center bg-secondary">Create an Event</h3>
                 <hr/>
                 <div className="card center">
-                {/* <div className="row bg-dark"> */}
-                    {/* <div className="col"/> */}
-                    {/* <div className="col"> */}
-                        <div className="card-body bg-dark">
-                            {/* <br/> */}
-                            <div className="row">
-                                <div className="col">
-                                    <label className="col-form-label">Name</label>
-                                </div>
-                                <div className="col-9">
-                                    <input type="text" className="form-control mb-2" ref={this.ename}/>
-                                </div>
+                    <div className="card-body bg-dark">
+                        <div className="row">
+                            <div className="col">
+                                <label className="col-form-label">Name</label>
                             </div>
-                            <div className="row">
-                                <div className="col">
-                                    <label className="col-form-label">Venue</label>
-                                </div>
-                                <div className="col-9">
-                                    <input type="text" className="form-control mb-2" ref={this.evenue}/>
-                                </div>
+                            <div className="col-9">
+                                <input type="text" className="form-control mb-2" ref={this.ename}/>
                             </div>
-                            <div className="row">
-                                <div className="col">
-                                    <label className="col-form-label">Date</label>
-                                </div>
-                                <div className="col-9">
-                                    <input type="date" className="form-control mb-2" ref={this.edate}/>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className="col">
-                                    <label className="col-form-label">Description</label>
-                                </div>
-                                <div className="col-9">
-                                    <textarea className="form-control mb-2" ref={this.edescription}/>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className="col"/>
-                                <button className="btn btn-success col-5" onClick={this.saveEvent}>Submit</button>
-                                <div className="col"/>
-                            </div>
-                        {/* <br/> */}
                         </div>
-                    {/* </div> */}
-                    {/* <div className="col"/> */}
+                        <div className="row">
+                            <div className="col">
+                                <label className="col-form-label">Venue</label>
+                            </div>
+                            <div className="col-9">
+                                <input type="text" className="form-control mb-2" ref={this.evenue}/>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col">
+                                <label className="col-form-label">Date</label>
+                            </div>
+                            <div className="col-9">
+                                <input type="date" className="form-control mb-2" ref={this.edate}/>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col">
+                                <label className="col-form-label">Description</label>
+                            </div>
+                            <div className="col-9">
+                                <textarea className="form-control mb-2" ref={this.edescription}/>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col"/>
+                            <button className="btn btn-success col-5" onClick={this.saveEvent}>Submit</button>
+                            <div className="col"/>
+                        </div>
+                        <div className="row">
+                            <p className="text-center">{this.state.msg}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         )
