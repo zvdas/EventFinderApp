@@ -6,7 +6,7 @@ export default function AuthReducer(state=[], action) {
             return [...state, action.payload]
         case LOGIN_USER:
             return [...state, action.payload]
-        case SESSION_USER:
+        case LOGOUT_USER:
             return [...state, action.payload]
         default:
             return state

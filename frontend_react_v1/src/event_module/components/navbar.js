@@ -16,7 +16,7 @@ export default function Navbar() {
                 <div className="col-12">
                     <div className="nav nav-tabs bg-dark" role="tablist">
                         <button className="nav-link" data-bs-toggle="tab">
-                            <Link to={'/home'}>Home</Link>
+                            <Link to={'/'}>Home</Link>
                         </button>
                         <button className="nav-link" data-bs-toggle="tab">
                             <Link to={'/show'}>Show Events</Link>
@@ -38,7 +38,7 @@ export default function Navbar() {
             </nav>
             
             <Routes>
-                <Route exact path="/home" element={<Home/>}/>
+                <Route exact path="/" element={<Home/>}/>
                 <Route exact path="/show" element={<ShowEvents/>}/>
                 <Route exact path="/search" element={<SearchEvent/>}/>
                 <Route exact path="/add" element={<AddEvent/>}/>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { registerAUser, loginAUser } from '../redux/actions/auth/auth_actions'
+import { mapStateToProps } from '../redux/actions/manage_state';
 
 class Home extends Component {
     constructor(props) {
@@ -13,7 +14,6 @@ class Home extends Component {
 
         this.registerUser = this.registerUser.bind(this);
         this.loginUser = this.loginUser.bind(this);
-        this.manageUser = this.manageUser.bind(this);
         this.userType = this.userType.bind(this);
     }
 
@@ -25,21 +25,25 @@ class Home extends Component {
     registerUser() {
         let user = {
             email : this.email.current.value,
-            password : this.password.current.value
+            password : this.password.current.value,
+            isLoggedin: false,
+            msg: ''
         }
 
         this.props.registerAUser(user);
-        this.setState({ msg: 'User registration successful' });
+        // this.setState({ msg: 'User registration successful' });
     }
 
     loginUser() {
         let user = {
             email : this.email.current.value,
-            password : this.password.current.value
+            password : this.password.current.value,
+            isLoggedin: false,
+            msg: ''
         }
 
         this.props.loginAUser(user);
-        this.setState({ msg: 'User login successful' });
+        // this.setState({ msg: 'User login successful' });
     }
 
     render() {
@@ -47,21 +51,7 @@ class Home extends Component {
 
         this.state.isNewUser
         ? response = (
-            <div>
-                <h3 className='text-center'>Login</h3>
-                <div className='col-auto'>
-                    <input type='text' name='forEmail' className='form-control mb-3' ref={this.email} placeholder='email@example.com'/>
-                </div> 
-                <div className='col-auto'>
-                    <input type='password' name='forPassword' className='form-control mb-3' ref={this.password} placeholder='Password'/>
-                </div>
-                <div className='col-auto'>
-                    <button className='btn btn-danger' onClick={this.loginUser}>login</button>
-                </div>
-            </div>
-        )
-        : response = (
-            <div>
+            <div className='row m-3'>
                 <h3 className='text-center'>Sign up</h3>
                 <div className='col-auto'>
                     <input type='text' name='forEmail' className='form-control mb-3' ref={this.email} placeholder='email@example.com'/>
@@ -70,7 +60,21 @@ class Home extends Component {
                     <input type='password' name='forPassword' className='form-control mb-3' ref={this.password} placeholder='Password'/>
                 </div>
                 <div className='col-auto'>
-                    <button className='btn btn-danger' onClick={this.registerUser}>sign up</button>
+                    <button className='btn btn-primary' onClick={this.registerUser}>sign up</button>
+                </div>
+            </div>
+        )
+        : response = (
+            <div className='row m-3'>
+                <h3 className='text-center'>Login</h3>
+                <div className='col-auto'>
+                    <input type='text' name='forEmail' className='form-control mb-3' ref={this.email} placeholder='email@example.com'/>
+                </div> 
+                <div className='col-auto'>
+                    <input type='password' name='forPassword' className='form-control mb-3' ref={this.password} placeholder='Password'/>
+                </div>
+                <div className='col-auto'>
+                    <button className='btn btn-primary' onClick={this.loginUser}>login</button>
                 </div>
             </div>
         )
@@ -90,7 +94,7 @@ class Home extends Component {
 
                     <div className='row justify-content-center d-flex align-items-center'>
                         <div className='col-auto'>
-                            <button className='btn btn-primary' onClick={this.userType}  /* (click)='signUpOrLogin()'*/>click here</button> 
+                            <button className='btn btn-primary' onClick={this.userType} >click here</button> 
                         </div>
                         {' '}{this.state.type}
                     </div>
@@ -105,4 +109,4 @@ class Home extends Component {
     }
 }
 
-export default connect(null, { registerAUser, loginAUser })(Home);
+export default connect(mapStateToProps, { registerAUser, loginAUser })(Home);

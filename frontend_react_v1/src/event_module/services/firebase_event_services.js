@@ -1,10 +1,6 @@
-// using firestore
-// import db from "../../firebase-config";
-import app from "../../firebase-config";
+import app from "../configurations/firebase-config";
 import { getFirestore } from '@firebase/firestore';
 import { addDoc, collection, deleteDoc, doc, getDoc, getDocs, query, updateDoc, where } from "firebase/firestore";
-
-// let ecoll = collection(db, "events");
 
 const db = getFirestore(app)
 
@@ -33,6 +29,5 @@ class EventServices{
         return getDocs(query(collection(db, "events"), where("evenue", "==", venue))).then(response=>({data: response.docs.map(doc=>({...doc.data(), id: doc.id}))}));
     }
 }
-// */
 
 export default new EventServices();

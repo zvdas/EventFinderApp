@@ -1,4 +1,4 @@
-import { SIGNUP_USER, LOGIN_USER, MANAGE_USER } from './auth_types'
+import { SIGNUP_USER, LOGIN_USER, LOGOUT_USER } from './auth_types'
 
 export const signUpUser = (data) => {
     return {
@@ -14,9 +14,9 @@ export const loginUser = (data) => {
     }
 }
 
-export const manageUser = (data) => {
+export const logoutUser = (data) => {
     return {
-        type: MANAGE_USER,
+        type: LOGOUT_USER,
         payload: data
     }
 }
