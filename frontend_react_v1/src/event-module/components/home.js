@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { registerAUser, loginAUser } from '../redux/actions/auth/auth_actions'
-import { mapStateToProps } from '../redux/actions/manage_state';
+import { registerAUser, loginAUser } from '../redux/actions/auth/auth-actions'
+import { mapStateToProps } from '../redux/actions/manage-state';
 
 class Home extends Component {
     constructor(props) {

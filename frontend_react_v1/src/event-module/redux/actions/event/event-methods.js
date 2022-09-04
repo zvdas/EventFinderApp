@@ -1,4 +1,4 @@
-import { CREATE_EVENT, DELETE_EVENT, RETRIEVE_EVENTS, SELECT_DATATYPE, UPDATE_EVENT } from './event_types'
+import { CREATE_EVENT, DELETE_EVENT, RETRIEVE_EVENTS, SELECT_DATATYPE, UPDATE_EVENT } from './event-types'
 
 export const createAnEvent = (data) => {
     return {

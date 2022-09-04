@@ -1,5 +1,5 @@
-import EventServices from "../../../services/firebase_event_services"
-import { createAnEvent, deleteEventById, getAllEvents, getEventByDate, getEventById, getEventByVenue, getSelectedDataType, updateEventById } from "./event_methods";
+import EventServices from '../../../services/firebase-event-service'
+import { createAnEvent, deleteEventById, getAllEvents, getEventByDate, getEventById, getEventByVenue, getSelectedDataType, updateEventById } from './event-methods';
 
 export const createEvent = (events) => {
     return (dispatch) => {

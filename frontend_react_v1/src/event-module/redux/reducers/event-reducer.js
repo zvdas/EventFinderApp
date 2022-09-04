@@ -1,4 +1,4 @@
-import { CREATE_EVENT, DELETE_EVENT, RETRIEVE_EVENTS, SELECT_DATATYPE, UPDATE_EVENT } from "../actions/event/event_types";
+import { CREATE_EVENT, DELETE_EVENT, RETRIEVE_EVENTS, SELECT_DATATYPE, UPDATE_EVENT } from '../actions/event/event-types';
 
 export default function EventReducer(state=[], action){
     switch(action.type){

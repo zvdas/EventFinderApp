@@ -1,5 +1,5 @@
-import AuthServices from "../../../services/firebase_auth"
-import { signUpUser, loginUser, logoutUser } from './auth_methods'
+import AuthServices from '../../../services/firebase-auth'
+import { signUpUser, loginUser, logoutUser } from './auth-methods'
 
 export const registerAUser = (user) => {
     return (dispatch) => {

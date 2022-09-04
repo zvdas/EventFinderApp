@@ -4,10 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import { store } from './event_module/redux/store';
-// import dotenv from 'dotenv';
-
-// dotenv.config({ path: './src/.env' });
+import { store } from './event-module/redux/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

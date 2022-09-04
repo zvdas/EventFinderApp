@@ -1,4 +1,4 @@
-import { SIGNUP_USER, LOGIN_USER, LOGOUT_USER } from './auth_types'
+import { SIGNUP_USER, LOGIN_USER, LOGOUT_USER } from './auth-types'
 
 export const signUpUser = (data) => {
     return {

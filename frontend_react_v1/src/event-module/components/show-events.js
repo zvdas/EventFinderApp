@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { connect } from "react-redux";
-import { retrieveEvents } from '../redux/actions/event/event_actions';
-import { mapStateToProps } from '../redux/actions/manage_state'
+import { connect } from 'react-redux';
+import { retrieveEvents } from '../redux/actions/event/event-actions';
+import { mapStateToProps } from '../redux/actions/manage-state'
 
 function ShowEvents({data}) {
 
@@ -27,10 +27,10 @@ function ShowEvents({data}) {
         <div>
             {
                 data.slice(currentIndex,currentIndex+5).map((x) => 
-                    <div className="card center" key={x.id}>
-                        <div className="card-body bg-dark">
-                            <h5 className="card-title">{x.ename}</h5>
-                            <p className="card-text">
+                    <div className='card center' key={x.id}>
+                        <div className='card-body bg-dark'>
+                            <h5 className='card-title'>{x.ename}</h5>
+                            <p className='card-text'>
                                 Venue: {x.evenue} | Date: {x.edate}
                                 <br/>
                                 {x.edescription}
@@ -45,15 +45,15 @@ function ShowEvents({data}) {
     let pagination = 
     (
         <nav>
-            <ul className="pagination">
-                <li className="page-item">
-                    <button className="page-link" onClick={()=>previousPage(currentIndex)}>Previous</button>
+            <ul className='pagination'>
+                <li className='page-item'>
+                    <button className='page-link' onClick={()=>previousPage(currentIndex)}>Previous</button>
                 </li>
-                <li className="page-item">
-                    <p className="page-link">Page {Math.ceil(currentIndex/5)+1} of {Math.ceil(data.length/5)}</p>
+                <li className='page-item'>
+                    <p className='page-link'>Page {Math.ceil(currentIndex/5)+1} of {Math.ceil(data.length/5)}</p>
                 </li>
-                <li className="page-item">
-                    <button className="page-link" onClick={()=>nextPage(currentIndex)}>Next</button>
+                <li className='page-item'>
+                    <button className='page-link' onClick={()=>nextPage(currentIndex)}>Next</button>
                 </li>
             </ul>
         </nav>
@@ -61,16 +61,16 @@ function ShowEvents({data}) {
 
     return (
         <div>
-            <h3 className="text-center bg-secondary">List of Events</h3>
+            <h3 className='text-center bg-secondary'>List of Events</h3>
             <hr/>
             {response}
             <hr/>
-            <div className="row">
-                <div className="col"/>
-                <div className="col-5">
+            <div className='row'>
+                <div className='col'/>
+                <div className='col-5'>
                     {pagination}
                 </div>
-                <div className="col"/>
+                <div className='col'/>
             </div>
         </div>
     )
